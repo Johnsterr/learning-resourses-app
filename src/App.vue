@@ -1,9 +1,11 @@
 <template>
+	<the-header :apptitle="appTitle"></the-header>
 	<stored-resources :resources="storedResources"></stored-resources>
 </template>
 
 <script>
 // Подключаем компонент локально
+import TheHeader from './components/layout/TheHeader.vue';
 import StoredResources from './components/resources/StoredResources.vue';
 
 export default {
@@ -13,10 +15,12 @@ export default {
 		'learning-resource': LearningResource
 		LearningResource: LearningResource
 		*/
+		TheHeader,
 		StoredResources
 	},
 	data() {
 		return {
+			appTitle: 'Учебные ресурсы',
 			storedResources: [
 				{
 					id: 'off-guide',
