@@ -18,7 +18,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(248, 161, 62);
+	background-color: #f8a13e;
 }
 
 header h1 {

@@ -3,7 +3,8 @@
 		<base-card>
 			<header>
 				<h3>{{ title }}</h3>
-				<button>Удалить</button>
+				<!-- Добавляем класс flat через входные параметры -->
+				<base-button mode="flat">Удалить</base-button>
 			</header>
 			<p>{{ description }}</p>
 			<nav>
