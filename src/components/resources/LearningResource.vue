@@ -15,7 +15,7 @@
 
 <script>
 export default {
-	// Входные параметры
+	// Входные параметры из StoredResources.vue 
 	props: ['title', 'description', 'link']
 }
 </script>

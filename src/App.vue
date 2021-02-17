@@ -1,18 +1,10 @@
 <template>
-	<ul>
-		<learning-resource
-			v-for="resource in storedResources"
-			:key="resource.id"
-			:title="resource.title"
-			:description="resource.description"
-			:link="resource.link"
-		></learning-resource>
-	</ul>
+	<stored-resources :resources="storedResources"></stored-resources>
 </template>
 
 <script>
 // Подключаем компонент локально
-import LearningResource from './components/resources/LearningResource';
+import StoredResources from './components/resources/StoredResources.vue';
 
 export default {
 	// Регистрируем компоненты
@@ -21,7 +13,7 @@ export default {
 		'learning-resource': LearningResource
 		LearningResource: LearningResource
 		*/
-		LearningResource
+		StoredResources
 	},
 	data() {
 		return {
