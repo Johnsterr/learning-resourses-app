@@ -1,9 +1,28 @@
 <template>
-	<ul></ul>
+	<ul>
+		<learning-resource
+			v-for="resource in storedResources"
+			:key="resource.id"
+			:title="resource.title"
+			:description="resource.description"
+			:link="resource.link"
+		></learning-resource>
+	</ul>
 </template>
 
 <script>
+// Подключаем компонент локально
+import LearningResource from './components/resources/LearningResource';
+
 export default {
+	// Регистрируем компоненты
+	components: {
+		/* Варианты регистрации компонента
+		'learning-resource': LearningResource
+		LearningResource: LearningResource
+		*/
+		LearningResource
+	},
 	data() {
 		return {
 			storedResources: [
