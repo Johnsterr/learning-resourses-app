@@ -33,6 +33,12 @@ export default {
 					title: 'Yandex',
 					description: 'Поисковая система Яндекс',
 					link: 'https://yandex.ru/'
+				},
+				{
+					id: 'clr-scheme',
+					title: 'ColorScheme',
+					description: 'Цветовой круг: онлайн подбор цветов и цветовых схем',
+					link: 'https://colorscheme.ru/'
 				}
 			]
 		}
