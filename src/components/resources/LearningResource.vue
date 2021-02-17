@@ -1,15 +1,15 @@
 <template>
 	<li>
-		<div>
+		<base-card>
 			<header>
 				<h3>{{ title }}</h3>
 				<button>Удалить</button>
 			</header>
-		</div>
-		<p>{{ description }}</p>
-		<nav>
-			<a :href="link" target="_blank" rel="noopener noreferrer">Посмотреть ресурс</a>
-		</nav>
+			<p>{{ description }}</p>
+			<nav>
+				<a :href="link" target="_blank" rel="noopener noreferrer">Посмотреть ресурс</a>
+			</nav>
+		</base-card>
 	</li>
 </template>
 
@@ -23,8 +23,11 @@ export default {
 <style scoped>
 li {
   margin: 0 auto;
-	padding: 1rem;
   max-width: 40rem;
+}
+
+li + li {
+	margin-top: 1rem;
 }
 
 header {
