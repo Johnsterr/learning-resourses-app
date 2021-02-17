@@ -43,3 +43,19 @@ export default {
 	}
 }
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
