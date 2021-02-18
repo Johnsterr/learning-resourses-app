@@ -1,17 +1,17 @@
 <template>
 	<base-card>
-		<form>
+		<form @submit.prevent="submitForm">
 			<div class="form-control">
 				<label for="title">Название</label>
-				<input id="title" name="title" type="text">
+				<input id="title" name="title" type="text" ref="titleInput">
 			</div>
 			<div class="form-control">
 				<label for="description">Описание</label>
-				<textarea id="description" name="description" rows="4"></textarea>
+				<textarea id="description" name="description" rows="4" ref="descInput"></textarea>
 			</div>
 			<div class="form-control">
 				<label for="link">Ссылка</label>
-				<input id="link" name="link" type="url">
+				<input id="link" name="link" type="url" ref="linkInput">
 			</div>
 			<div>
 				<base-button type="submit">Добавить ресурс</base-button>
@@ -19,6 +19,22 @@
 		</form>
 	</base-card>
 </template>
+
+<script>
+export default {
+	// Получаем данные от родителя TheResources.vue
+	inject: ['addResource'],
+	methods: {
+		submitForm() {
+			const enteredTitle = this.$refs.titleInput.value;
+			const enteredDescription = this.$refs.descInput.value;
+			const enteredLink = this.$refs.linkInput.value;
+
+			this.addResource(enteredTitle, enteredDescription, enteredLink);
+		}
+	}
+}
+</script>
 
 <style scoped>
 label {

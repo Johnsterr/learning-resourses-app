@@ -11,7 +11,9 @@
 			>Добавить ресурс</base-button>
 		</base-card>
 	</div>
-	<component :is="selectedTab"></component>
+	<keep-alive>
+		<component :is="selectedTab"></component>
+	</keep-alive>
 </template>
 
 <script>
@@ -64,13 +66,25 @@ export default {
 	// Передача данных в дочерние компоненты
 	provide() {
 		return {
-			resources: this.storedResources
+			resources: this.storedResources,
+			addResource: this.addResource
 		}
 	},
 	methods: {
 		// Передаем в data активную вкладку
 		setSelectedTab(tab) {
 			this.selectedTab = tab;
+		},
+		// Создаем новый ресурс и добавляем в список
+		addResource(title, desc, link) {
+			const newResource = {
+				id: new Date().toString(),
+				title: title,
+				description: desc,
+				link: link
+			};
+			this.storedResources.push(newResource);
+			this.selectedTab = 'stored-resources';
 		}
 	}
 }
