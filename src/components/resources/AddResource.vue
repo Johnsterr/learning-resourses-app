@@ -1,4 +1,13 @@
 <template>
+	<base-dialog v-if="inputIsInvalid" title="Неверные данные" @close="confirmError">
+		<template #default>
+			<p>Ой, ошибка! Одно из полей оказалось пустым.</p>
+			<p>Пожалуйста, проверьте все ли данные были введены.</p>
+		</template>
+		<template #actions>
+			<base-button @click="confirmError">Ок</base-button>
+		</template>
+	</base-dialog>
 	<base-card>
 		<form @submit.prevent="submitForm">
 			<div class="form-control">
@@ -24,13 +33,32 @@
 export default {
 	// Получаем данные от родителя TheResources.vue
 	inject: ['addResource'],
+	data() {
+		return {
+			// Данные для валидации полей
+			inputIsInvalid: false
+		}
+	},
 	methods: {
+		// Отправка формы
 		submitForm() {
 			const enteredTitle = this.$refs.titleInput.value;
 			const enteredDescription = this.$refs.descInput.value;
 			const enteredLink = this.$refs.linkInput.value;
 
+			// Валидация введенных данных
+			if (enteredTitle.trim() === '' ||
+					enteredDescription.trim() === '' ||
+					enteredLink.trim() === '') {
+				this.inputIsInvalid = true;
+				return
+			}
+
 			this.addResource(enteredTitle, enteredDescription, enteredLink);
+		},
+		// Подтверждение ошибки
+		confirmError() {
+			this.inputIsInvalid = false;
 		}
 	}
 }

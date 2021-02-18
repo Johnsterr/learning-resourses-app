@@ -16,8 +16,8 @@
 
 <script>
 // Подключаем компоненты локально
-import StoredResources from './StoredResources.vue';
-import AddResource from './AddResource.vue';
+import StoredResources from './StoredResources';
+import AddResource from './AddResource';
 
 export default {
 	// Регистрируем компоненты
