@@ -19,8 +19,8 @@ export default {
 	components: {
 		LearningResource
 	},
-	// Входные параметры из App.vue
-	props: ['resources']
+	// Получаем данные от родителя TheResources.vue
+	inject: ['resources']
 }
 </script>
 

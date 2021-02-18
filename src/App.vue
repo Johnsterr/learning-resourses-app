@@ -1,12 +1,12 @@
 <template>
 	<the-header :apptitle="appTitle"></the-header>
-	<stored-resources :resources="storedResources"></stored-resources>
+	<the-resources></the-resources>
 </template>
 
 <script>
-// Подключаем компонент локально
+// Подключаем компоненты локально
 import TheHeader from './components/layout/TheHeader.vue';
-import StoredResources from './components/resources/StoredResources.vue';
+import TheResources from './components/resources/TheResources.vue';
 
 export default {
 	// Регистрируем компоненты
@@ -16,31 +16,11 @@ export default {
 		LearningResource: LearningResource
 		*/
 		TheHeader,
-		StoredResources
+		TheResources
 	},
 	data() {
 		return {
-			appTitle: 'Учебные ресурсы',
-			storedResources: [
-				{
-					id: 'off-guide',
-					title: 'Официальное руководство',
-					description: 'Официальная документация фреймворка VueJS',
-					link: 'https://vuejs.org/'
-				},
-				{
-					id: 'yand',
-					title: 'Yandex',
-					description: 'Поисковая система Яндекс',
-					link: 'https://yandex.ru/'
-				},
-				{
-					id: 'clr-scheme',
-					title: 'ColorScheme',
-					description: 'Цветовой круг: онлайн подбор цветов и цветовых схем',
-					link: 'https://colorscheme.ru/'
-				}
-			]
+			appTitle: 'Учебные ресурсы'
 		}
 	}
 }
