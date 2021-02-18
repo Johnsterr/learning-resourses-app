@@ -36,4 +36,14 @@ button:hover, button:active {
 .flat:hover, .flat:active {
   background-color: #fddada;
 }
+
+.smooth {
+  background-color: transparent;
+  color: #f78f07;
+  border: none;
+}
+
+.smooth:hover, .smooth:active {
+  background-color: #fdf1da;
+}
 </style>

@@ -28,7 +28,7 @@ export default {
 ul {
   list-style: none;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0;
   max-width: 40rem;
 }
 </style>

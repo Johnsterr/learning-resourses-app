@@ -1,16 +1,14 @@
 <template>
-	<div>
-		<base-card>
-			<base-button
-				@click="setSelectedTab('stored-resources')"
-				:mode="storedButtonMode"
-			>Библиотека ресурсов</base-button>
-			<base-button
-				@click="setSelectedTab('add-resource')"
-				:mode="addButtonMode"
-			>Добавить ресурс</base-button>
-		</base-card>
-	</div>
+	<base-card>
+		<base-button
+			@click="setSelectedTab('stored-resources')"
+			:mode="storedButtonMode"
+		>Библиотека ресурсов</base-button>
+		<base-button
+			@click="setSelectedTab('add-resource')"
+			:mode="addButtonMode"
+		>Добавить ресурс</base-button>
+	</base-card>
 	<keep-alive>
 		<component :is="selectedTab"></component>
 	</keep-alive>
@@ -57,10 +55,10 @@ export default {
 	computed: {
 		// Добавление стилей
 		storedButtonMode() {
-			return this.selectedTab === 'stored-resources' ? null : 'flat';
+			return this.selectedTab === 'stored-resources' ? null : 'smooth';
 		},
 		addButtonMode() {
-			return this.selectedTab === 'add-resource' ? null : 'flat';
+			return this.selectedTab === 'add-resource' ? null : 'smooth';
 		}
 	},
 	// Передача данных в дочерние компоненты
@@ -89,15 +87,3 @@ export default {
 	}
 }
 </script>
-
-<style scoped>
-div {
-	max-width: 40rem;
-	padding: 1rem;
-	margin: 0 auto;
-}
-
-button + button {
-	margin-left: 1rem;
-}
-</style>
