@@ -4,7 +4,7 @@
 			<header>
 				<h3>{{ title }}</h3>
 				<!-- Добавляем класс flat через входные параметры -->
-				<base-button mode="flat">Удалить</base-button>
+				<base-button mode="flat" @click="deleteResource(id)">Удалить</base-button>
 			</header>
 			<p>{{ description }}</p>
 			<nav>
@@ -17,7 +17,9 @@
 <script>
 export default {
 	// Входные параметры из StoredResources.vue 
-	props: ['title', 'description', 'link']
+	props: ['id', 'title', 'description', 'link'],
+	// Получаем данные от родителя TheResources.vue
+	inject: ['deleteResource']
 }
 </script>
 

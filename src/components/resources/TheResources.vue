@@ -65,7 +65,8 @@ export default {
 	provide() {
 		return {
 			resources: this.storedResources,
-			addResource: this.addResource
+			addResource: this.addResource,
+			deleteResource: this.deleteResource
 		}
 	},
 	methods: {
@@ -83,6 +84,17 @@ export default {
 			};
 			this.storedResources.push(newResource);
 			this.selectedTab = 'stored-resources';
+		},
+		// Удаляем ресурс из списка
+		deleteResource(resId) {
+			/* Реализация, не работающая с provide/inject
+
+			this.storedResources = this.storedResources.filter(res => res.id !== resId);
+			
+			*/
+
+			const resIndex = this.storedResources.findIndex(res => res.id === resId);
+			this.storedResources.splice(resIndex, 1);
 		}
 	}
 }
