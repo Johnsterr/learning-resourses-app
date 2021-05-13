@@ -9,8 +9,8 @@ import BaseDialog from './components/ui/BaseDialog';
 const app = createApp(App);
 
 // Регистрация компонентов
-app.component('base-card', BaseCard);
-app.component('base-button', BaseButton);
-app.component('base-dialog', BaseDialog);
+app.component('BaseCard', BaseCard);
+app.component('BaseButton', BaseButton);
+app.component('BaseDialog', BaseDialog);
 
 app.mount('#app');

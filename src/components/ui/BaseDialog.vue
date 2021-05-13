@@ -12,7 +12,7 @@
       </section>
       <menu>
         <slot name="actions">
-          <base-button @click="$emit('close')">Закрыть</base-button>
+          <BaseButton @click="$emit('close')">Закрыть</BaseButton>
         </slot>
       </menu>
     </dialog>
@@ -21,16 +21,16 @@
 
 <script>
 export default {
-	// Получение заголовка от AddResource.vue
-	props: {
-		title: {
-			type: String,
-			required: false
-		}
-	},
-	// Пользовательское событие для закрытия модального окна
-	emits: ['close']
-}
+  // Получение заголовка от AddResource.vue
+  props: {
+    title: {
+      type: String,
+      required: false,
+    },
+  },
+  // Пользовательское событие для закрытия модального окна
+  emits: ['close'],
+};
 </script>
 
 <style scoped>
@@ -43,7 +43,6 @@ div {
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 10;
 }
-
 dialog {
   position: fixed;
   top: 20vh;
@@ -57,29 +56,24 @@ dialog {
   margin: 0;
   overflow: hidden;
 }
-
 header {
   background-color: #f8a13e;
   color: white;
   width: 100%;
   padding: 1rem;
 }
-
 header h2 {
   margin: 0;
 }
-
 section {
   padding: 1rem;
 }
-
 menu {
   padding: 1rem;
   display: flex;
   justify-content: flex-end;
   margin: 0;
 }
-
 @media (min-width: 768px) {
   dialog {
     left: calc(50% - 20rem);

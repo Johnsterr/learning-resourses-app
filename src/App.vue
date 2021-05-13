@@ -1,6 +1,6 @@
 <template>
-	<the-header :apptitle="appTitle"></the-header>
-	<the-resources></the-resources>
+	<TheHeader :apptitle="appTitle"></TheHeader>
+	<TheResources></TheResources>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
 	},
 	data() {
 		return {
-			appTitle: 'Учебные ресурсы'
+			appTitle: 'Полезные материалы'
 		}
 	}
 }
