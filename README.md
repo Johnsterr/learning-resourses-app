@@ -13,4 +13,4 @@
 
 |               Список материалов                |                   Добавление ресурса                   |
 | :--------------------------------------------: | :----------------------------------------------------: |
-| <img src="./images/main_page.png" width="120"> | <img src="./images/add_resource_page.png" width="120"> |
+| <img src="./images/main_page.png" width="240"> | <img src="./images/add_resource_page.png" width="240"> |
